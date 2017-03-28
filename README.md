@@ -31,3 +31,9 @@ To display an image slideshow with the selected images you can use a code like t
 <? endforeach; ?>
 </div>
 ````
+
+## Drag between multiple instances
+
+You can even move images between multiple instances of the `images` field like this:
+
+![Drag](drag.gif)
