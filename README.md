@@ -1,4 +1,4 @@
-# Kirby Images v0.1.2
+# Kirby Images v0.1.3
 
 **This field is still in development and not quite ready yet.**
 
@@ -16,4 +16,18 @@ Put the `kirby-images` folder into your `site/plugins` folder and rename it to `
 slideshow:
   label:       Slideshow
   type:        images
+````
+
+## Template
+
+To display an image slideshow with the selected images you can use a code like this:
+
+````
+<div class="slider">
+<? foreach($page->slideshow()->yaml() as $image): ?>   
+  <?php if($image = $page->image($image)): ?>
+	  <?= $image->crop(1200,500)->html(); ?>  		    
+	<?php endif ?>
+<? endforeach; ?>
+</div>
 ````
