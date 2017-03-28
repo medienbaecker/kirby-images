@@ -26,8 +26,8 @@ To display an image slideshow with the selected images you can use a code like t
 <div class="slider">
 <? foreach($page->slideshow()->yaml() as $image): ?>   
   <?php if($image = $page->image($image)): ?>
-	  <?= $image->crop(1200,500)->html(); ?>  		    
-	<?php endif ?>
+    <?= $image->crop(1200,500)->html(); ?>  		    
+  <?php endif ?>
 <? endforeach; ?>
 </div>
 ````
