@@ -39,7 +39,7 @@
        $file = $page->image($file);
        if (!$file) continue;
      ?><!--
-    --><div class="grid-item <?php e(in_array($file->filename(), $field->value()), 'selected') ?>" data-image="<?php __($file->filename()) ?>">
+    --><div class="grid-item <?php e(in_array($file->filename(), $field->value()), 'selected') ?>" data-image="<?php __($file->filename()) ?>" data-helper="<?php __($file->filename()) ?>">
          <figure title="<?php __($file->filename()) ?>" class="file">
            <a class="file-preview file-preview-is-<?php __($file->type()) ?>" href="<?php __($file->url('edit')) ?>">
              <img src="<?php __($file->crop(400, 266)->url()) ?>" alt="<?php __($file->filename()) ?>">

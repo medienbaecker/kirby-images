@@ -10,6 +10,11 @@
 				field.data( fieldname, true );
 			}
 			
+			function noover() {
+			  field.find(".add").removeClass("over");
+			  field.find(".grid-item").removeClass("over");
+			}
+			
 			function reset() {
 			  if (field.find(".grid-item.selected").length) {
 			    field.find(".empty").hide();
@@ -17,8 +22,6 @@
 			  else {
 			    field.find(".empty").show();
 			  }
-			  field.find(".add").removeClass("over");
-			  field.find(".grid-item").removeClass("over");
 			};
 			
 			reset();
@@ -44,12 +47,14 @@
 			  field.find(".empty").hide();
 			  field.find(".images-add-button select option[data-filename='" + filename + "']").attr("disabled", "disabled");
 			  write();
+			  noover();
 			};
 			
 			function remove(filename) {
 			  field.find(".grid-item[data-image='" + filename + "']").removeClass("selected");
 			  field.find(".images-add-button select option[data-filename='" + filename + "']").removeAttr("disabled");
 			  reset();
+			  noover();
 			  write();
 			};
 			
@@ -84,17 +89,46 @@
 			field.find('.field-content').droppable({
 			  tolerance: "pointer",
 			  hoverClass: 'over',
-			  accept: $('.sidebar .draggable-file'),
+			  accept:
+			  function (elem) {
+			    if ($('.sidebar').has(elem).length) {
+			      return true;
+			    }
+			    else if (!$(this).has(elem).length && elem.hasClass("grid-item")) {
+			      return true
+			    }
+	      },
 			  drop: function(e, ui) {
 			    field.find(".add").removeClass("over");
 			    field.find(".grid-item").removeClass("over");
 			    var droppedImage = ui.draggable.data('helper');
+			    if (ui.draggable.hasClass("grid-item")) {
+			      otherField = ui.draggable.closest(".field-with-images");
+			      otherField.find(".images-add-button select option[data-filename='" + droppedImage + "']").removeAttr("disabled");
+			      if (otherField.find(".selected").length <= 2) {
+		          otherField.find(".empty").show();
+		        }
+		        ui.draggable.removeClass("selected");
+		        
+		        otherField.find("input.images").val("");
+		        if (otherField.find(".grid-item.selected").length > 1) {
+		          filenames = new Array();
+		          otherField.find(".grid-item.selected").each(function() {
+		            filenames.push($(this).data("image"));
+		          });
+		          otherField.find("input.images").val(filenames.join(","));
+		        }
+		        else {
+		          otherField.find("input.images").val(otherField.find(".grid-item.selected").data("image"));
+		        }
+		        otherField.closest('form').trigger('keep');
+		        
+				  }
 		      select(droppedImage);
 			  },
 			  over: function(e, ui) {
 			    field.find(".empty").hide();
 			    var droppableImage = field.find(".grid-item[data-image='" + ui.draggable.data('helper') + "']");
-			    
 			    if (droppableImage.hasClass("selected")) {
 			      droppableImage.addClass("over");
 			    }
@@ -110,12 +144,11 @@
 			        invisibleItem.removeClass("selected");
 			      }
 			      field.find(".add .inner").height(height);
-			      
 			      field.find(".add").addClass("over");
 			    }
-			    
 			  },
 			  out: function(e, ui) {
+			    noover();
 			    reset();
 			  }
 			});
