@@ -29,7 +29,7 @@
 <div class="files" data-api="<?php __($page->url('files')) ?>">
 
   <div class="empty">
-    Noch keine Bilder hinzugefügt.
+    <?php _l('fields.structure.empty') ?>
   </div>
     
   <div class="grid sortable">

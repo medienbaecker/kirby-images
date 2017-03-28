@@ -35,7 +35,7 @@
 			  else {
 			    field.find("input.images").val(field.find(".grid-item.selected").data("image"));
 			  }
-			  
+			  field.closest('form').trigger('keep');
 			}
 			
 			function select(filename) {
