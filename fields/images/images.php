@@ -28,7 +28,12 @@ class imagesField extends BaseField {
 	
 	public function value() {
     $value = parent::value();
-    return explode(",", $value);
+    return yaml::decode($value);
+  }
+  
+  public function result() {
+    $result = parent::result();
+    return yaml::encode(explode(",", $result));
   }
   
   public function label() {
