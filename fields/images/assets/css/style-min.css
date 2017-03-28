@@ -1,0 +1,103 @@
+@media screen and (min-width: 450px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 49.98%; } }
+
+@media screen and (min-width: 640px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 49.98%; } }
+
+@media screen and (min-width: 800px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 49.98%; } }
+
+@media screen and (min-width: 960px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 49.98%; } }
+
+@media screen and (min-width: 1120px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 33.31%; } }
+
+@media screen and (min-width: 1280px) {
+  .field-with-images .files .grid-item, .field-with-images .files .add {
+    width: 24.98%; } }
+
+.field-with-images {
+  margin-bottom: 0;
+}
+
+
+.field-with-images .images-add-button select {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.field-with-images .files .empty {
+  padding: 1.5em;
+  background: #ddd;
+  margin-bottom: 1.5em;
+}
+.field-with-images .files .file-preview {
+  background: white;
+}
+.field-with-images .files .file-preview img {
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+.field-with-images .files .grid-item {
+  display: none;
+}
+.field-with-images .files .grid-item.selected {
+  display: inline-block;
+}
+.field-with-images .files .grid-item.over figure {
+  outline: 2px solid black;
+  position: relative;
+}
+.field-with-images .files .grid-item.over figure a.file-preview, .field-with-images .files .grid-item.over figure figcaption.file-info, .field-with-images .files .grid-item.over figure nav.file-options {
+  opacity: .25;
+}
+.field-with-images .files .grid-item.over figure:after {
+  content: '\f0a9';
+  font-family: FontAwesome;
+  font-size: 1.5em;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2000;
+}
+
+.field-with-images .files .add {
+  padding-left: 1.5em;
+  box-sizing: border-box;
+  display: none;
+  text-align: center;
+}
+  .field-with-images .files .add .inner {
+    color: black;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid black;
+  }
+  .field-with-images .files .add .inner:after {
+    content: '\f055';
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+    
+.field-with-images .field-content .files .add.over {
+  display: inline-block;
+}
