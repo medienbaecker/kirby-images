@@ -1,51 +1,51 @@
 @media screen and (min-width: 450px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 640px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 800px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 960px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 1120px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 33.3%; } }
+    width: 33.23%; } }
 
 @media screen and (min-width: 1280px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 24.97%; } }
+    width: 24.9%; } }
     
     
 @media screen and (min-width: 450px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 640px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 800px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 960px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 1120px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.97%; } }
+    width: 49.9%; } }
 
 @media screen and (min-width: 1280px) {
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 33.3%; } }
+    width: 33.23%; } }
 
 .modal-content .field-with-images {
   margin-bottom: 1.5em;
