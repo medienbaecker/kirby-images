@@ -1,32 +1,67 @@
 @media screen and (min-width: 450px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.98%; } }
+    width: 49.97%; } }
 
 @media screen and (min-width: 640px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.98%; } }
+    width: 49.97%; } }
 
 @media screen and (min-width: 800px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.98%; } }
+    width: 49.97%; } }
 
 @media screen and (min-width: 960px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.98%; } }
+    width: 49.97%; } }
 
 @media screen and (min-width: 1120px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 33.31%; } }
+    width: 33.3%; } }
 
 @media screen and (min-width: 1280px) {
   .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 24.98%; } }
+    width: 24.97%; } }
+    
+    
+@media screen and (min-width: 450px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 49.97%; } }
 
-.field-with-images {
-  margin-bottom: 0;
+@media screen and (min-width: 640px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 49.97%; } }
+
+@media screen and (min-width: 800px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 49.97%; } }
+
+@media screen and (min-width: 960px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 49.97%; } }
+
+@media screen and (min-width: 1120px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 49.97%; } }
+
+@media screen and (min-width: 1280px) {
+  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
+    width: 33.3%; } }
+
+.modal-content .field-with-images {
+  margin-bottom: 1.5em;
+}
+.modal-content .files.filled {
+  background-color: #EFEFEF;
+  padding: 1.5em;
+  padding-bottom: 0;
+}
+.modal-content .field-with-images {
+  overflow: hidden;
 }
 
-
+.field-with-images .images-add-button {
+  overflow: hidden;
+}
 .field-with-images .images-add-button select {
   opacity: 0;
   position: absolute;
@@ -40,6 +75,9 @@
   padding: 1.5em;
   background: #ddd;
   margin-bottom: 1.5em;
+}
+.field-with-images .files.filled .empty {
+  display: none;
 }
 .field-with-images .files .file-preview {
   background: white;
