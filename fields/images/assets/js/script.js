@@ -17,10 +17,10 @@
 			
 			function reset() {
 			  if (field.find(".grid-item.selected").length) {
-			    field.find(".empty").hide();
+			    field.find(".files").addClass("filled");
 			  }
 			  else {
-			    field.find(".empty").show();
+			    field.find(".files").removeClass("filled");
 			  }
 			};
 			
@@ -44,7 +44,7 @@
 			function select(filename) {
 			  var file = field.find(".grid-item[data-image='" + filename + "']");
 			  file.insertBefore(field.find(".add")).addClass("selected");
-			  field.find(".empty").hide();
+			  reset();
 			  field.find(".images-add-button select option[data-filename='" + filename + "']").attr("disabled", "disabled");
 			  write();
 			  noover();
@@ -106,7 +106,7 @@
 			      otherField = ui.draggable.closest(".field-with-images");
 			      otherField.find(".images-add-button select option[data-filename='" + droppedImage + "']").removeAttr("disabled");
 			      if (otherField.find(".selected").length <= 2) {
-		          otherField.find(".empty").show();
+		          otherField.find(".files").removeClass("filled");
 		        }
 		        ui.draggable.removeClass("selected");
 		        
@@ -127,7 +127,7 @@
 		      select(droppedImage);
 			  },
 			  over: function(e, ui) {
-			    field.find(".empty").hide();
+			    field.find(".files").addClass("filled");
 			    var droppableImage = field.find(".grid-item[data-image='" + ui.draggable.data('helper') + "']");
 			    if (droppableImage.hasClass("selected")) {
 			      droppableImage.addClass("over");
