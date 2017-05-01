@@ -1,4 +1,4 @@
-# Kirby Images v0.1.5
+# Kirby Images v0.1.6
 
 **This field is still in development and not quite ready yet.**
 

@@ -48,7 +48,12 @@ class imagesField extends BaseField {
   public function headline() {
     
     $select = "<select>";
-    $select .= "<option disabled selected>" . l('fields.structure.add') . "</option>";
+    if ($this->page()->images()->count() > 0) {
+      $select .= "<option disabled selected>" . l('fields.structure.add') . "</option>";
+    }
+    else {
+      $select .= "<option disabled selected>" . l('pages.show.files.empty') . "</option>";
+    }
     foreach ($this->page()->images() as $image) {
       $disabled = "";
       if (in_array($image->filename(), $this->value())) $disabled = "disabled";
