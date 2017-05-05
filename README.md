@@ -10,7 +10,7 @@ Put the `kirby-images` folder into your `site/plugins` folder and rename it to `
 
 ## Example
 
-![Preview](images.gif)
+![Preview](https://cloud.githubusercontent.com/assets/11269635/25747375/940debe2-31a7-11e7-8a4e-4a30cb966a4c.gif)
 
 ```yaml
 slideshow:
@@ -36,4 +36,4 @@ To display an image slideshow with the selected images you can use a code like t
 
 You can even move images between multiple instances of the `images` field like this:
 
-![Drag](drag.gif)
+![Drag](https://cloud.githubusercontent.com/assets/11269635/25747374/940bc790-31a7-11e7-8dcd-e70038dac2cc.gif)
