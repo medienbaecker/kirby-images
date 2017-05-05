@@ -12,17 +12,17 @@ Put the `kirby-images` folder into your `site/plugins` folder and rename it to `
 
 ![Preview](images.gif)
 
-````
+```yaml
 slideshow:
   label:       Slideshow
   type:        images
-````
+```
 
 ## Template
 
 To display an image slideshow with the selected images you can use a code like this:
 
-````
+```php
 <div class="slider">
 <? foreach($page->slideshow()->yaml() as $image): ?>   
   <?php if($image = $page->image($image)): ?>
@@ -30,7 +30,7 @@ To display an image slideshow with the selected images you can use a code like t
   <?php endif ?>
 <? endforeach; ?>
 </div>
-````
+```
 
 ## Drag between multiple instances
 
