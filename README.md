@@ -1,4 +1,4 @@
-# Kirby Images v0.1.6
+# Kirby Images v0.1.6 <a href="https://www.paypal.me/medienbaecker"><img width="125" src="https://cloud.githubusercontent.com/assets/7975568/26115669/fb7041b0-3a60-11e7-8480-d1d5c303717c.png" alt="Buy me a beer"></a>
 
 **This field is still in development and not quite ready yet.**
 
