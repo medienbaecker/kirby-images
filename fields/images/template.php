@@ -14,17 +14,14 @@
     $pageImages[] = $image->filename();
   }
   
-  
   foreach ($pageImages as $pageImage) {
     if (in_array($pageImage, $fieldImages)) {
       continue;
     }
     $fieldImages[] = $pageImage;
   }
-  
-?>
 
-<input class="images" type="hidden" name="<?= $field->name() ?>" value="<?= implode(",", $field->value()) ?>">
+?>
 
 <div class="files" data-api="<?php __($page->url('files')) ?>">
 
@@ -35,9 +32,11 @@
   <div class="grid sortable">
       
      <?php
-       foreach($fieldImages as $file):
-       $file = $page->image($file);
+       $valueImages = array();
+       foreach($fieldImages as $f):
+       $file = $page->image($f);
        if (!$file) continue;
+       if(in_array($f, $field->value())) $valueImages[] = $f;
      ?><!--
     --><div class="grid-item <?php e(in_array($file->filename(), $field->value()), 'selected') ?>" data-image="<?php __($file->filename()) ?>" data-helper="<?php __($file->filename()) ?>">
          <figure title="<?php __($file->filename()) ?>" class="file">
@@ -70,3 +69,5 @@
  </div>
   
 </div>
+
+<input class="images" type="hidden" name="<?= $field->name() ?>" value="<?= implode(",", $valueImages) ?>">
