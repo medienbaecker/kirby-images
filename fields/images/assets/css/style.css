@@ -47,15 +47,15 @@
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
     width: 33.23%; } }
 
-.modal-content .field-with-images {
+.modal-content .field-with-images, .builder .field-with-images {
   margin-bottom: 1.5em;
 }
-.modal-content .files.filled {
+.modal-content .files.filled, .builder .files.filled {
   background-color: #EFEFEF;
   padding: 1.5em;
   padding-bottom: 0;
 }
-.modal-content .field-with-images {
+.modal-content .field-with-images, .builder .field-with-images {
   overflow: hidden;
 }
 
