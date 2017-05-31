@@ -59,8 +59,10 @@
 			};
 			
 			field.find(".grid-item .btn.remove").on("click", function () {
-			  var filename = $(this).closest(".grid-item").data("image");
-			  remove(filename);
+			  if (!$(this).is(".ui-sortable-helper .btn")) {
+			    var filename = $(this).closest(".grid-item").data("image");
+			    remove(filename);
+			  }
 			  return false;
 			});
 			
