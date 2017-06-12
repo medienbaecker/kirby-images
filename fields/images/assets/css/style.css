@@ -75,7 +75,6 @@
 .field-with-images .files .empty {
   padding: 1.5em;
   background: #ddd;
-  margin-bottom: 1.5em;
 }
 .field-with-images .files.filled .empty {
   display: none;
