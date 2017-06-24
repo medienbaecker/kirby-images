@@ -33,7 +33,9 @@
 			    field.find(".grid-item.selected").each(function() {
 			      filenames.push($(this).data("image"));
 			    });
-			    field.find("input.images").val(filenames.join(","));
+			    filenames = "- " + filenames.join("\n- ");
+			    console.log(filenames);
+			    field.find("input.images").val(filenames);
 			  }
 			  else {
 			    field.find("input.images").val(field.find(".grid-item.selected").data("image"));
@@ -118,7 +120,9 @@
 		          otherField.find(".grid-item.selected").each(function() {
 		            filenames.push($(this).data("image"));
 		          });
-		          otherField.find("input.images").val(filenames.join(","));
+		          filenames = "- " + filenames.join("\n- ");
+		          console.log(filenames);
+		          otherField.find("input.images").val(filenames);
 		        }
 		        else {
 		          otherField.find("input.images").val(otherField.find(".grid-item.selected").data("image"));
