@@ -57,6 +57,11 @@
   padding-bottom: 0;
 }
 
+.field-name-my_engineer .egr-fieldsets .egr-fieldsets .files.filled {
+  background: transparent;
+  padding: 0;
+}
+
 .field-with-images .images-add-button {
   overflow: hidden;
 }
