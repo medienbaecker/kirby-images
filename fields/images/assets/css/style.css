@@ -47,16 +47,14 @@
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
     width: 33.23%; } }
 
-.modal-content .field-with-images, .builder .field-with-images {
+.modal-content .field-with-images, .builder .field-with-images, .field-name-my_engineer .field-with-images {
   margin-bottom: 1.5em;
+  overflow: hidden;
 }
-.modal-content .files.filled, .builder .files.filled {
+.modal-content .files.filled, .builder .files.filled, .field-name-my_engineer .files.filled {
   background-color: #EFEFEF;
   padding: 1.5em;
   padding-bottom: 0;
-}
-.modal-content .field-with-images, .builder .field-with-images {
-  overflow: hidden;
 }
 
 .field-with-images .images-add-button {
