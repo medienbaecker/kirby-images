@@ -70,4 +70,14 @@
   
 </div>
 
-<input class="images" type="hidden" name="<?= $field->name() ?>" value="<?= implode(",", $valueImages) ?>">
+<?php
+  if (count($valueImages) > 1) {
+    $valueImages = "- " . implode("\n- ", $valueImages);
+  }
+  else {
+    $valueImages = $valueImages[0];
+  }
+
+?>
+
+<input class="images" type="hidden" name="<?= $field->name() ?>" value="<?= $valueImages ?>">
