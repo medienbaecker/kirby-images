@@ -27,16 +27,18 @@
 			reset();
 			
 			function write() {
-			  field.find("input.images").val("");
+			  field.find("input.images").val("").trigger('change');
 			  if (field.find(".grid-item.selected").length > 1) {
 			    filenames = new Array();
 			    field.find(".grid-item.selected").each(function() {
 			      filenames.push($(this).data("image"));
 			    });
-			    field.find("input.images").val(filenames.join(","));
+			    filenames = "- " + filenames.join("\n- ");
+			    console.log(filenames); // Delete before publish?
+			    field.find("input.images").val(filenames).trigger('change');
 			  }
 			  else {
-			    field.find("input.images").val(field.find(".grid-item.selected").data("image"));
+			    field.find("input.images").val(field.find(".grid-item.selected").data("image")).trigger('change');
 			  }
 			  field.closest('form').trigger('keep');
 			}
@@ -118,7 +120,9 @@
 		          otherField.find(".grid-item.selected").each(function() {
 		            filenames.push($(this).data("image"));
 		          });
-		          otherField.find("input.images").val(filenames.join(","));
+		          filenames = "- " + filenames.join("\n- ");
+		          console.log(filenames);
+		          otherField.find("input.images").val(filenames);
 		        }
 		        else {
 		          otherField.find("input.images").val(otherField.find(".grid-item.selected").data("image"));
