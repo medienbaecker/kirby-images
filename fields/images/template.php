@@ -70,9 +70,14 @@
   
 </div>
 
+
+
 <?php
   if (count($valueImages) > 1) {
     $valueImages = "- " . implode("\n- ", $valueImages);
+  }
+  elseif (count($valueImages) == 0) {
+    $valueImages = "";
   }
   else {
     $valueImages = $valueImages[0];
