@@ -30,12 +30,7 @@ class imagesField extends BaseField {
     $value = parent::value();
     return yaml::decode($value);
   }
-  
-  public function result() {
-    $result = parent::result();
-    return $result;
-  }
-  
+    
   public function label() {
     return null;
   }
