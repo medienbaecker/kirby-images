@@ -34,7 +34,7 @@
 			      filenames.push($(this).data("image"));
 			    });
 			    filenames = "- " + filenames.join("\n- ");
-			    console.log(filenames); // Delete before publish?
+			    
 			    field.find("input.images").val(filenames).trigger('change');
 			  }
 			  else {
@@ -121,7 +121,7 @@
 		            filenames.push($(this).data("image"));
 		          });
 		          filenames = "- " + filenames.join("\n- ");
-		          console.log(filenames);
+		          
 		          otherField.find("input.images").val(filenames);
 		        }
 		        else {
