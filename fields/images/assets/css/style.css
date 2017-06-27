@@ -47,17 +47,18 @@
   .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
     width: 33.23%; } }
 
-.modal-content .field-with-images, .builder .field-with-images, .field-name-my_engineer .field-with-images {
+.modal-content .field-with-images, .builder .field-with-images, .egr-row [data-field="images"] {
   margin-bottom: 1.5em;
   overflow: hidden;
 }
-.modal-content .files.filled, .builder .files.filled, .field-name-my_engineer .files.filled {
+.modal-content .files.filled, .builder .files.filled, .egr-row [data-field="images"] .files.filled {
   background-color: #EFEFEF;
   padding: 1.5em;
   padding-bottom: 0;
 }
 
-.field-name-my_engineer .egr-fieldsets .egr-fieldsets .files.filled {
+
+.egr-row .egr-even [data-field="images"] .files.filled {
   background: transparent;
   padding: 0;
 }
