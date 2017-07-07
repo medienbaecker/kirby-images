@@ -2,7 +2,7 @@
   "name": "images",
   "description": "Images Field",
   "author": "Thomas Günther <mail@medienbaecker.com>",
-  "version": "0.1.17",
+  "version": "0.2",
   "type": "kirby-plugin",
   "license": "MIT"
 }

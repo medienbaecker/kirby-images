@@ -23,13 +23,13 @@
 
 ?>
 
-<div class="files" data-api="<?php __($page->url('files')) ?>">
+<div class="imagesgrid" data-api="<?php __($page->url('files')) ?>">
 
   <div class="empty">
     <?php _l('fields.structure.empty') ?>
   </div>
     
-  <div class="grid sortable">
+  <div class="imagesgrid-inner sortable">
       
      <?php
        $valueImages = array();
@@ -37,36 +37,37 @@
        $file = $page->image($f);
        if (!$file) continue;
        if(in_array($f, $field->value())) $valueImages[] = $f;
-     ?><!--
-    --><div class="grid-item <?php e(in_array($file->filename(), $field->value()), 'selected') ?>" data-image="<?php __($file->filename()) ?>" data-helper="<?php __($file->filename()) ?>">
-         <figure title="<?php __($file->filename()) ?>" class="file">
-           <a class="file-preview file-preview-is-<?php __($file->type()) ?>" href="<?php __($file->url('edit')) ?>">
+     ?>
+     
+     <div class="images-item <?php e(in_array($file->filename(), $field->value()), 'selected') ?>" data-image="<?php __($file->filename()) ?>" data-helper="<?php __($file->filename()) ?>">
+         <figure title="<?php __($file->filename()) ?>" class="images-figure">
+           <a class="images-preview images-preview-is-<?php __($file->type()) ?>" href="<?php __($file->url('edit')) ?>">
              <img src="<?php __($file->crop(400, 266)->url()) ?>" alt="<?php __($file->filename()) ?>">
            </a>
-           <figcaption class="file-info">
+           <figcaption class="images-info">
              <a href="<?php __($file->url('edit')) ?>">
-               <span class="file-name cut"><?php __($file->filename()) ?></span>
-               <span class="file-meta marginalia cut"><?php __($file->niceSize()) ?></span>
+               <span class="images-name cut"><?php __($file->filename()) ?></span>
+               <span class="images-meta marginalia cut"><?php __($file->niceSize()) ?></span>
              </a>
            </figcaption>
-           <nav class="file-options cf">
+           <nav class="images-options">
              <a class="btn btn-with-icon" href="<?php __($file->url('edit')) ?>">
-               <?php i('pencil', 'left') ?><span><?php _l('files.index.edit') ?></span>
-             </a>
-             <a data-modal class="btn btn-with-icon remove" href="#remove">
+               <?php i('pencil', 'left') ?>
+             </a><a data-modal class="btn btn-with-icon remove" href="#remove">
                <?php i('minus-circle', 'left') ?>
              </a>
            </nav>
          </figure>
-       </div><!--
-    --><?php endforeach ?><!--
-    
-    --><div class="add">
-      <div class="inner">
-      </div>
+       </div>
+       
+     <?php endforeach ?>
+     
+  <div class="add">
+    <div class="inner">
     </div>
+  </div>
  
- </div>
+  </div>
   
 </div>
 

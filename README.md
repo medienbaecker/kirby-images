@@ -1,4 +1,4 @@
-# Kirby Images v0.1.17 <a href="https://www.paypal.me/medienbaecker"><img width="99" src="http://www.medienbaecker.com/beer.png" alt="Buy me a beer" align="right"></a>
+# Kirby Images v0.2 <a href="https://www.paypal.me/medienbaecker"><img width="99" src="http://www.medienbaecker.com/beer.png" alt="Buy me a beer" align="right"></a>
 
 **This field is still in development and not quite ready yet.**
 

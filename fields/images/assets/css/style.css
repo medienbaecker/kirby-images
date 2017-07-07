@@ -1,71 +1,3 @@
-@media screen and (min-width: 450px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 640px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 800px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 960px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 1120px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 33.23%; } }
-
-@media screen and (min-width: 1280px) {
-  .field-with-images .files .grid-item, .field-with-images .files .add {
-    width: 24.9%; } }
-    
-    
-@media screen and (min-width: 450px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 640px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 800px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 960px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 1120px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 49.9%; } }
-
-@media screen and (min-width: 1280px) {
-  .modal-content .field-with-images .files .grid-item, .modal-content  .field-with-images .files .add {
-    width: 33.23%; } }
-
-.modal-content .field-with-images, .builder .field-with-images, .egr-row [data-field="images"] {
-  margin-bottom: 1.5em;
-  overflow: hidden;
-}
-.modal-content .files.filled, .builder .files.filled, .egr-row [data-field="images"] .files.filled {
-  background-color: #EFEFEF;
-  padding: 1.5em;
-  padding-bottom: 0;
-}
-
-
-.egr-row .egr-even [data-field="images"] .files.filled {
-  background: transparent;
-  padding: 0;
-}
-
-.field-with-images .images-add-button {
-  overflow: hidden;
-}
 .field-with-images .images-add-button select {
   opacity: 0;
   position: absolute;
@@ -73,72 +5,94 @@
   right: 0;
   top: 0;
   bottom: 0;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-.field-with-images .files .empty {
+.field-with-images .imagesgrid .empty {
   padding: 1.5em;
-  background: #ddd;
-}
-.field-with-images .files.filled .empty {
-  display: none;
-}
-.field-with-images .files .file-preview {
-  background: white;
-}
-.field-with-images .files .file-preview img {
-  top: auto;
-  left: auto;
-  transform: none;
-}
+  background: #ddd; }
 
-.field-with-images .files .grid-item {
-  display: none;
-}
-.field-with-images .files .grid-item.selected {
-  display: inline-block;
-}
-.field-with-images .files .grid-item.over figure {
-  outline: 2px solid black;
-  position: relative;
-}
-.field-with-images .files .grid-item.over figure a.file-preview, .field-with-images .files .grid-item.over figure figcaption.file-info, .field-with-images .files .grid-item.over figure nav.file-options {
-  opacity: .25;
-}
-.field-with-images .files .grid-item.over figure:after {
-  content: '\f0a9';
-  font-family: FontAwesome;
-  font-size: 1.5em;
+.field-with-images .imagesgrid.filled {
+  margin-bottom: -1.5em; }
+  .field-with-images .imagesgrid.filled .empty {
+    display: none; }
+
+.field-with-images .imagesgrid .imagesgrid-inner {
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-}
+  display: grid;
+  grid-gap: 0 1.5em;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  overflow: hidden; }
 
-.field-with-images .files .add {
-  padding-left: 1.5em;
+.field-with-images .imagesgrid .images-item {
+  display: none;
+  margin-bottom: 1.5em; }
+  .field-with-images .imagesgrid .images-item.selected {
+    display: block; }
+  .field-with-images .imagesgrid .images-item figure {
+    background: white; }
+  .field-with-images .imagesgrid .images-item .images-preview {
+    display: block;
+    width: 100%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCOTdEOEI3OUE3MDMxMUUzOEIxNEZERTM0N0EzRjlGMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCOTdEOEI3QUE3MDMxMUUzOEIxNEZERTM0N0EzRjlGMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI5N0Q4Qjc3QTcwMzExRTM4QjE0RkRFMzQ3QTNGOUYxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI5N0Q4Qjc4QTcwMzExRTM4QjE0RkRFMzQ3QTNGOUYxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jGcG/wAAAAlQTFRF////zMzMzc3NCvMx6wAAACJJREFUeNpiYGRkYgQBBhgYIAGEBCO6SpIFmKCADDMAAgwATVgAkU8MrdIAAAAASUVORK5CYII=);
+    text-align: center; }
+    .field-with-images .imagesgrid .images-item .images-preview img {
+      display: inline-block;
+      vertical-align: top; }
+  .field-with-images .imagesgrid .images-item .images-info {
+    line-height: 1.5em;
+    border-bottom: 1px solid #ddd; }
+    .field-with-images .imagesgrid .images-item .images-info a {
+      display: block;
+      padding: 1em 1.5em; }
+    .field-with-images .imagesgrid .images-item .images-info span {
+      display: block; }
+  .field-with-images .imagesgrid .images-item .images-options .btn {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: .75em 1.5em;
+    text-align: center; }
+    .field-with-images .imagesgrid .images-item .images-options .btn:first-child {
+      border-right: 1px solid #ddd; }
+  .field-with-images .imagesgrid .images-item.over figure {
+    outline: 2px solid black;
+    outline-offset: -2px;
+    position: relative; }
+    .field-with-images .imagesgrid .images-item.over figure .images-preview, .field-with-images .imagesgrid .images-item.over figure .images-info, .field-with-images .imagesgrid .images-item.over figure .images-options {
+      opacity: .25; }
+    .field-with-images .imagesgrid .images-item.over figure:after {
+      content: '\f0a9';
+      font-family: FontAwesome;
+      font-size: 1.5em;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+              transform: translateY(-50%) translateX(-50%); }
+
+.field-with-images .imagesgrid .add {
   box-sizing: border-box;
   display: none;
   text-align: center;
-}
-  .field-with-images .files .add .inner {
+  margin-bottom: 1.5em; }
+  .field-with-images .imagesgrid .add.over {
+    display: block; }
+  .field-with-images .imagesgrid .add .inner {
     color: black;
     box-sizing: border-box;
     position: relative;
-    border: 2px solid black;
-  }
-  .field-with-images .files .add .inner:after {
-    content: '\f055';
-    font-family: FontAwesome;
-    font-size: 1.5em;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-  }
-    
-.field-with-images .field-content .files .add.over {
-  display: inline-block;
-}
+    border: 2px solid black; }
+    .field-with-images .imagesgrid .add .inner:after {
+      content: '\f055';
+      font-family: FontAwesome;
+      font-size: 1.5em;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+              transform: translateY(-50%) translateX(-50%); }
+/*# sourceMappingURL=style.css.map */
