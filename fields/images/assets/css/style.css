@@ -26,7 +26,9 @@
 
 .field-with-images .imagesgrid .images-item {
   display: none;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  min-width: 0;
+  overflow: hidden; }
   .field-with-images .imagesgrid .images-item.selected {
     display: block; }
   .field-with-images .imagesgrid .images-item figure {

@@ -31,6 +31,8 @@
     .images-item {
       display: none;
       margin-bottom: 1.5em;
+      min-width: 0;
+      overflow: hidden;
       &.selected {
         display: block;
       }
