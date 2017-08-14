@@ -1,3 +1,5 @@
+<?php require_once(__DIR__.DS.'helper.php'); ?>
+
 <?php echo $field->headline() ?>
 
 <?php
@@ -26,7 +28,9 @@
 <div class="imagesgrid" data-api="<?php __($page->url('files')) ?>">
 
   <div class="empty">
-    <?php _l('fields.structure.empty') ?>
+    <strong class="no-images"><?= translation('nothingAdded') ?></strong>
+    <span class="dragdrop-help"><?= translation('help') ?></span>
+    <img class="tutorial" src="<?= url('assets/plugins/images/images/images.gif') ?>" />
   </div>
     
   <div class="imagesgrid-inner sortable">

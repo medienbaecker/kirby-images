@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__.DS.'helper.php');
+
 class imagesField extends BaseField {
 	static public $fieldname = 'images';
 	static public $assets = array(
@@ -37,22 +39,31 @@ class imagesField extends BaseField {
   
   public function headline() {
     
-    $select = "<select>";
-    if ($this->page()->images()->count() > 0) {
-      $select .= "<option disabled selected>" . l('fields.structure.add') . "</option>";
+    
+    $select = '<div class="images-dropdown">';
+    if ($this->page()->hasImages()) {
+      $select .= '<div class="filter-wrap">';
+      $select .= '<i class="icon fa fa-search"></i>';
+      $select .= '<input type="text" class="filter" placeholder="' . translation('search') . '"/>';
+      $select .= '</div>';
+      $select .= '<span class="no-images-found">' . translation('noImagesFound') . '</span>';
+      $select .= '<span class="no-more-images">' . translation('noMoreImages') . '</span>';
     }
     else {
-      $select .= "<option disabled selected>" . l('pages.show.files.empty') . "</option>";
+      $select .= '<span class="no-more-images no-images">' . translation('noImages') . '</span>';
     }
     foreach ($this->page()->images() as $image) {
       $disabled = "";
       if (in_array($image->filename(), $this->value())) $disabled = "disabled";
-      $select .= '<option ' . $disabled . ' data-filename="' . $image->filename() . '">' . $image->filename() . '</option>';
+      $select .= '<a class="' . $disabled . '" data-filename="' . $image->filename() . '">';
+      $select .= $image->crop(75,75)->html();
+      $select .= '<span class="image">' . $image->filename() . '</span>';
+      $select .= '</a>';
     }
-    $select .= "</select>";
+    $select .= "</div>";
     
     $add = new Brick('div');
-    $add->html('<i class="icon icon-left fa fa-plus-circle"></i>' . l('fields.structure.add') . $select);
+    $add->html('<i class="icon icon-left fa fa-plus-circle"></i>' . translation('select'));
     $add->addClass('images-add-button label-option');
   
     if(!$this->label) {
@@ -62,6 +73,7 @@ class imagesField extends BaseField {
     $label = parent::label();
     $label->addClass('images-label');
     $label->append($add);
+    $label->append($select);
     
     return $label;
   

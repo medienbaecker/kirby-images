@@ -10,18 +10,83 @@
 				field.data( fieldname, true );
 			}
 			
+			
+			field.find("input.filter").on('input change', function() {
+	      filter = $(this).val();
+	      field.find(".images-dropdown .no-images-found").removeClass("da");
+	      if(filter != "") {
+	        
+	        $.expr[':'].Contains = function(a, i, m) {
+	         return $(a).text().toUpperCase()
+	                           .indexOf(m[3].toUpperCase()) >= 0;
+	        };	        
+	        field.find(".images-dropdown a").addClass("filtered");
+	        	        
+	        field.find(".images-dropdown a .image:Contains('" + filter + "')").not("disabled").closest("a").removeClass("filtered");
+	        	        	        	        
+	        if (field.find(".images-dropdown a").not(".filtered").length === 0) {
+	          field.find(".images-dropdown .no-images-found").addClass("da");
+	        }
+	      }
+	      else {
+	        field.find(".images-dropdown a").removeClass("filtered");
+	      }
+	    });
+	    
+	    field.find("input.filter").keydown(function(e){
+	        // UP
+	        if (e.keyCode == 38) {
+	          if (field.find(".images-dropdown a.focused").length) {
+	            field.find(".images-dropdown a.focused").removeClass("focused").prevAll("a").not(".filtered").not(".disabled").first().addClass("focused");
+	          }
+	          else {
+	            field.find(".images-dropdown a").removeClass("focused");
+	            field.find(".images-dropdown a").not(".filtered").not(".disabled").last().addClass("focused");
+	          }
+	        }    
+	        // DOWN
+	        if (e.keyCode == 40) {
+	          if (field.find(".images-dropdown a.focused").length) {
+	            field.find(".images-dropdown a.focused").removeClass("focused").nextAll("a").not(".filtered").not(".disabled").first().addClass("focused");
+	          }
+	          else {
+	            field.find(".images-dropdown a").removeClass("focused");
+	            field.find(".images-dropdown a").not(".filtered").not(".disabled").first().addClass("focused");
+	          }
+	        }
+	        // ENTER
+	        if (e.keyCode == 13) {
+	          field.find(".images-dropdown a.focused").click();
+	          field.find(".images-dropdown a").removeClass("focused");
+	          return false;
+	        }
+	    });
+			
+			
 			function noover() {
 			  field.find(".add").removeClass("over");
 			  field.find(".images-item").removeClass("over");
 			}
 			
 			function reset() {
+			  
 			  if (field.find(".images-item.selected").length) {
 			    field.find(".imagesgrid").addClass("filled");
 			  }
 			  else {
 			    field.find(".imagesgrid").removeClass("filled");
 			  }
+			  
+			  field.find(".images-dropdown").removeClass("open");
+			  field.find(".images-add-button").removeClass("open");
+			  			  
+			  if (field.find('.images-dropdown a').not(".disabled").length > 0) {
+			    field.find('.images-dropdown .no-more-images').removeClass("da");
+			  }
+			  else {
+			    field.find('.images-dropdown .no-more-images').addClass("da");
+			  }
+			  
 			};
 			
 			reset();
@@ -46,15 +111,15 @@
 			function select(filename) {
 			  var file = field.find(".images-item[data-image='" + filename + "']");
 			  file.insertBefore(field.find(".add")).addClass("selected");
+			  field.find(".images-dropdown a[data-filename='" + filename + "']").addClass("disabled");
 			  reset();
-			  field.find(".images-add-button select option[data-filename='" + filename + "']").attr("disabled", "disabled");
 			  write();
 			  noover();
 			};
 			
 			function remove(filename) {
 			  field.find(".images-item[data-image='" + filename + "']").removeClass("selected");
-			  field.find(".images-add-button select option[data-filename='" + filename + "']").removeAttr("disabled");
+			  field.find(".images-dropdown a[data-filename='" + filename + "']").removeClass("disabled");
 			  reset();
 			  noover();
 			  write();
@@ -68,9 +133,28 @@
 			  return false;
 			});
 			
-			field.find(".images-add-button select").on("change", function(e) {
-		    select($(this).find("option:selected").text());
-		    $(this).val($(this).find("option:first").val());
+			field.find(".images-add-button").on("click", function(e) {
+			  event.stopPropagation();
+			  field.find(".images-dropdown").toggleClass("open");
+			  field.find(".images-add-button").toggleClass("open");
+			  field.find("input.filter").focus();
+			  $(document).click(function(e) {
+		      if ($(e.target).closest('.images-dropdown').length === 0) {
+		        field.find("input.filter").val("");
+		        field.find("input.filter").trigger("change");
+		        field.find("input.filter").blur();
+		        field.find(".images-dropdown").removeClass("open");
+		        field.find(".images-add-button").removeClass("open");
+		      }
+			  });
+			});
+			
+			field.find(".images-dropdown a").on("click", function(e) {
+			  field.find("input.filter").val("");
+			  field.find("input.filter").trigger("change");
+		    select($(this).find(".image").text());
+		    field.find(".images-dropdown").removeClass("open");
+		    field.find(".images-add-button").removeClass("open");
 			});
 						
 			var files    = field.find('.imagesgrid');
@@ -98,7 +182,7 @@
 			    if ($('.sidebar').has(elem).length) {
 			      return true;
 			    }
-			    else if (!$(this).has(elem).length && elem.hasClass("grid-item")) {
+			    else if (!$(this).has(elem).length && elem.hasClass("images-item")) {
 			      return true
 			    }
 	      },
@@ -106,9 +190,9 @@
 			    field.find(".add").removeClass("over");
 			    field.find(".images-item").removeClass("over");
 			    var droppedImage = ui.draggable.data('helper');
-			    if (ui.draggable.hasClass("grid-item")) {
-			      otherField = ui.draggable.closest(".field-with-images");
-			      otherField.find(".images-add-button select option[data-filename='" + droppedImage + "']").removeAttr("disabled");
+			    if (ui.draggable.hasClass("images-item")) {
+			      otherField = ui.draggable.closest(".field-with-images");			      
+			      otherField.find(".images-dropdown a[data-filename='" + droppedImage + "']").removeClass("disabled");
 			      if (otherField.find(".selected").length <= 2) {
 		          otherField.find(".imagesgrid").removeClass("filled");
 		        }
