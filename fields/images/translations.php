@@ -18,6 +18,15 @@ return [
         'search'        => 'Bilder filtern...',
         'noImagesFound' => 'Keine Bilder gefunden'
     ],
+    'fr' => [
+        'noImages'      => 'Cette page n\'a pas d\'images',
+        'noMoreImages'  => 'Cette page n\'a pas d\'autres images',
+        'nothingAdded'  => 'Aucune image sélectionnée',
+        'help'          => 'Sélectionnez une image ou déposez-la par drag &amp; drop',
+        'select'        => 'Sélectionner une image',
+        'search'        => 'Filtrer les images...',
+        'noImagesFound' => 'Aucune image trouvée'
+    ],
     'nl' => [
         'noImages'      => 'Deze pagina heeft geen afbeeldingen',
         'noMoreImages'  => 'Deze pagina heeft geen afbeeldingen meer',
