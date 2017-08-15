@@ -17,5 +17,14 @@ return [
         'select'        => 'Bild auswählen',
         'search'        => 'Bilder filtern...',
         'noImagesFound' => 'Keine Bilder gefunden'
-    ]
+    ],
+    'nl' => [
+        'noImages'      => 'Deze pagina heeft geen afbeeldingen',
+        'noMoreImages'  => 'Deze pagina heeft geen afbeeldingen meer',
+        'nothingAdded'  => 'Geen afbeelding geselecteerd',
+        'help'          => 'Selecteer een afbeelding of gebruik drag &amp; drop',
+        'select'        => 'Selecteer afbeelding',
+        'search'        => 'Filter afbeeldingen...',
+        'noImagesFound' => 'Geen afbeeldingen gevonden'
+    ],
 ];
