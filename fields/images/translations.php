@@ -27,4 +27,13 @@ return [
         'search'        => 'Filter afbeeldingen...',
         'noImagesFound' => 'Geen afbeeldingen gevonden'
     ],
+    'sv_SE' => [
+        'noImages'      => 'Denna sida har inga bilder',
+        'noMoreImages'  => 'Denna sida har inga ytterligare bilder',
+        'nothingAdded'  => 'Inga bilder valda',
+        'help'          => 'Välj en bild eller använd dra och släpp',
+        'select'        => 'Välj bild',
+        'search'        => 'Filtrera bilder...',
+        'noImagesFound' => 'Inga bilder hittades'
+    ]
 ];
