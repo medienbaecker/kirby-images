@@ -27,7 +27,7 @@ return [
         'search'        => 'Filter afbeeldingen...',
         'noImagesFound' => 'Geen afbeeldingen gevonden'
     ],
-    'sv_SE' => [
+    'sv' => [
         'noImages'      => 'Denna sida har inga bilder',
         'noMoreImages'  => 'Denna sida har inga ytterligare bilder',
         'nothingAdded'  => 'Inga bilder valda',
