@@ -19,12 +19,12 @@ return [
         'noImagesFound' => 'Keine Bilder gefunden'
     ],
     'fr' => [
-        'noImages'      => 'Cette page n\'a pas d\'images',
-        'noMoreImages'  => 'Cette page n\'a pas d\'autres images',
+        'noImages'      => 'Cette page n’a pas d’image',
+        'noMoreImages'  => 'Cette page n’a pas d’autre image',
         'nothingAdded'  => 'Aucune image sélectionnée',
-        'help'          => 'Sélectionnez une image ou déposez-la par drag &amp; drop',
+        'help'          => 'Sélectionner une image ou l’ajouter par glisser-déposer',
         'select'        => 'Sélectionner une image',
-        'search'        => 'Filtrer les images...',
+        'search'        => 'Filtrer les images…',
         'noImagesFound' => 'Aucune image trouvée'
     ],
     'nl' => [
