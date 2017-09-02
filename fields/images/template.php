@@ -26,7 +26,7 @@
 ?>
 
 <div class="imagesgrid" data-api="<?php __($page->url('files')) ?>">
-
+  
   <div class="empty">
     <strong class="no-images"><?= translation('nothingAdded') ?></strong>
     <span class="dragdrop-help"><?= translation('help') ?></span>

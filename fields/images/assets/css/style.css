@@ -3,6 +3,13 @@
   .field-with-images .images-add-button.open {
     color: black; }
 
+.field-with-images.limit-reached .images-add-button {
+  display: none; }
+
+.field-with-images .images-limit {
+  font-weight: 400;
+  color: #777; }
+
 .field-with-images .images-dropdown {
   display: none;
   background: white;

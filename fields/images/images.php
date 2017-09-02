@@ -24,6 +24,7 @@ class imagesField extends BaseField {
 	public function element() {
 		$element = parent::element();
 		$element->data('field', self::$fieldname);
+		$element->data('limit', $this->limit());
 		$element->addClass('field-with-images');
 		return $element;
 	}
@@ -38,7 +39,6 @@ class imagesField extends BaseField {
   }
   
   public function headline() {
-    
     
     $select = '<div class="images-dropdown">';
     if ($this->page()->hasImages()) {
@@ -70,7 +70,12 @@ class imagesField extends BaseField {
       $this->label = '&nbsp;';
     }
     
+    if (isset($this->limit)) {
+      $this->label =  $this->label . ' <span class="images-limit">' . '(1/3)' . '</span>';
+    }
+    
     $label = parent::label();
+    
     $label->addClass('images-label');
     $label->append($add);
     $label->append($select);

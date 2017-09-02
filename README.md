@@ -35,3 +35,16 @@ To display an image slideshow with the selected images you can use a code like t
 You can even move images between multiple instances of the `images` field like this:
 
 ![Drag](https://cloud.githubusercontent.com/assets/11269635/25747374/940bc790-31a7-11e7-8dcd-e70038dac2cc.gif)
+
+## Options
+
+### Limit the number of images
+
+As of Images 1.0.4 you can limit the number of images:
+
+```yaml
+slideshow:
+  label:       Slideshow
+  type:        images
+  limit:       4
+```
