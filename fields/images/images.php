@@ -44,13 +44,13 @@ class imagesField extends BaseField {
     if ($this->page()->hasImages()) {
       $select .= '<div class="filter-wrap">';
       $select .= '<i class="icon fa fa-search"></i>';
-      $select .= '<input type="text" class="filter" placeholder="' . translation('search') . '"/>';
+      $select .= '<input type="text" class="filter" placeholder="' . imagesTranslation('search') . '"/>';
       $select .= '</div>';
-      $select .= '<span class="no-images-found">' . translation('noImagesFound') . '</span>';
-      $select .= '<span class="no-more-images">' . translation('noMoreImages') . '</span>';
+      $select .= '<span class="no-images-found">' . imagesTranslation('noImagesFound') . '</span>';
+      $select .= '<span class="no-more-images">' . imagesTranslation('noMoreImages') . '</span>';
     }
     else {
-      $select .= '<span class="no-more-images no-images">' . translation('noImages') . '</span>';
+      $select .= '<span class="no-more-images no-images">' . imagesTranslation('noImages') . '</span>';
     }
     foreach ($this->page()->images() as $image) {
       $disabled = "";
@@ -63,7 +63,7 @@ class imagesField extends BaseField {
     $select .= "</div>";
     
     $add = new Brick('div');
-    $add->html('<i class="icon icon-left fa fa-plus-circle"></i>' . translation('select'));
+    $add->html('<i class="icon icon-left fa fa-plus-circle"></i>' . imagesTranslation('select'));
     $add->addClass('images-add-button label-option');
   
     if(!$this->label) {
