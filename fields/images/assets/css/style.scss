@@ -108,6 +108,43 @@
       }
     }
     
+    span.no-more-images, span.no-images-found {
+      padding: 0 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: normal;
+      display: none;
+      height: 56px;
+      line-height: 56px;
+      &.da {
+        display: block;
+      }
+    }
+    
+    span.add-all {
+      padding: 0 1em;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: normal;
+      height: 35px;
+      line-height: 35px;
+      background: black;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      i.icon {
+        padding-right: .5em;
+      }
+      &:hover {
+        color: rgba(255,255,255,.75);
+      }
+    }
+    
+    
+    
       
   }
   

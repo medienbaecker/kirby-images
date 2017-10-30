@@ -100,9 +100,13 @@
 			  			  
 			  if (field.find('.images-dropdown a').not(".disabled").length > 0) {
 			    field.find('.images-dropdown .no-more-images').removeClass("da");
+			    field.find('.filter-wrap').show();
+			    field.find('span.add-all').show();
 			  }
 			  else {
 			    field.find('.images-dropdown .no-more-images').addClass("da");
+			    field.find('.filter-wrap').hide();
+			    field.find('span.add-all').hide();
 			  }
 			  
 			  checkLimit();
@@ -132,6 +136,15 @@
 			  var file = field.find(".images-item[data-image='" + filename + "']");
 			  file.insertBefore(field.find(".add")).addClass("selected");
 			  field.find(".images-dropdown a[data-filename='" + filename + "']").addClass("disabled");
+			  reset();
+			  write();
+			  noover();
+			};
+			
+			function selectAll() {
+			  var file = field.find(".images-item");
+			  file.insertBefore(field.find(".add")).addClass("selected");
+			  field.find(".images-dropdown a").addClass("disabled");
 			  reset();
 			  write();
 			  noover();
@@ -176,6 +189,17 @@
   		    select($(this).find(".image").text());
   		    field.find(".images-dropdown").removeClass("open");
   		    field.find(".images-add-button").removeClass("open");
+			  }
+			});
+			
+			field.find(".images-dropdown .add-all").on("click", function(e) {
+			  
+			  if (!field.hasClass("limit-reached") && !(field.find(".images-item.selected").length + field.find(".images-dropdown a").not(".disabled").length > field.data("limit"))) {
+				  field.find("input.filter").val("");
+				  field.find("input.filter").trigger("change");
+			    selectAll();
+			    field.find(".images-dropdown").removeClass("open");
+			    field.find(".images-add-button").removeClass("open");
 			  }
 			});
 						

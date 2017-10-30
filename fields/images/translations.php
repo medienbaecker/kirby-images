@@ -7,7 +7,8 @@ return [
         'help'          => 'Select an image or use drag and drop',
         'select'        => 'Select image',
         'search'        => 'Filter images...',
-        'noImagesFound' => 'No images found'
+        'noImagesFound' => 'No images found',
+        'addAll'        => 'Add all images'
     ],
     'de' => [
         'noImages'      => 'Diese Seite hat keine Bilder',
@@ -16,7 +17,8 @@ return [
         'help'          => 'Bild auswählen oder via Drag &amp; Drop ablegen',
         'select'        => 'Bild auswählen',
         'search'        => 'Bilder filtern...',
-        'noImagesFound' => 'Keine Bilder gefunden'
+        'noImagesFound' => 'Keine Bilder gefunden',
+        'addAll'        => 'Alle Bilder hinzufügen'
     ],
     'fr' => [
         'noImages'      => 'Cette page n’a pas d’image',

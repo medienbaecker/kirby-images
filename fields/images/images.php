@@ -60,6 +60,9 @@ class imagesField extends BaseField {
       $select .= '<span class="image">' . $image->filename() . '</span>';
       $select .= '</a>';
     }
+    $select .= '<span class="add-all">';
+    $select .= '<i class="icon fa fa-plus-square"></i>';
+    $select .= imagesTranslation('addAll') . '</span>';
     $select .= "</div>";
     
     $add = new Brick('div');
