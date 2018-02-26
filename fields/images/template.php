@@ -28,7 +28,7 @@
 <div class="imagesgrid" data-api="<?php __($page->url('files')) ?>">
   
   <div class="empty">
-    <strong class="no-images"><?= imagesTranslation('nothingAdded') ?></strong>
+    <span class="no-images"><a href="#" class="help-link"><?= imagesTranslation('nothingAdded') ?></a></span>
     <span class="dragdrop-help"><?= imagesTranslation('help') ?></span>
     <img class="tutorial" src="<?= url('assets/plugins/images/images/images.gif') ?>" />
   </div>
