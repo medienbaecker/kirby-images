@@ -182,6 +182,11 @@
 			  });
 			});
 			
+			field.find(".help-link").on("click", function(e) {
+				e.stopPropagation();
+				field.find(".images-add-button").click();
+			});
+
 			field.find(".images-dropdown a").on("click", function(e) {
 			  if (!field.hasClass("limit-reached")) {
   			  field.find("input.filter").val("");
