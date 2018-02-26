@@ -183,8 +183,8 @@
 			});
 			
 			field.find(".help-link").on("click", function(e) {
-				e.stopPropagation();
 				field.find(".images-add-button").click();
+        return false;
 			});
 
 			field.find(".images-dropdown a").on("click", function(e) {
