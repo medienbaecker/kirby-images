@@ -38,6 +38,16 @@ return [
         'search'        => 'Filter afbeeldingen...',
         'noImagesFound' => 'Geen afbeeldingen gevonden'
     ],
+    'pt' => [
+        'noImages'      => 'Esta página não possui imagens',
+        'noMoreImages'  => 'Esta página não possui mais imagens',
+        'nothingAdded'  => 'Nenhuma imagem selecionada',
+        'help'          => 'Selecione uma imagem ou arraste e solte a partir da barra lateral',
+        'select'        => 'Selecionar imagem',
+        'search'        => 'Filtrar imagens...',
+        'noImagesFound' => 'Nenhuma imagem encontrada',
+        'addAll'        => 'Adicionar todas as imagens'
+    ],
     'sv' => [
         'noImages'      => 'Denna sida har inga bilder',
         'noMoreImages'  => 'Denna sida har inga ytterligare bilder',
