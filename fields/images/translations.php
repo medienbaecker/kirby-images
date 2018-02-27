@@ -56,5 +56,15 @@ return [
         'select'        => 'Välj bild',
         'search'        => 'Filtrera bilder...',
         'noImagesFound' => 'Inga bilder hittades'
+    ],
+    'it' => [
+        'noImages'      => 'Questa pagina non ha immagini',
+        'noMoreImages'  => 'Questa pagina non ha altre immagini',
+        'nothingAdded'  => 'Nessuna immagine selezionata',
+        'help'          => 'Seleziona un\'immagine o trascinala dal pannello laterale',
+        'select'        => 'Seleziona immagine',
+        'search'        => 'Filtra immagini...',
+        'noImagesFound' => 'Nessuna immagine trovata',
+        'addAll'        => 'Aggiungi tutte le immagini'
     ]
 ];
