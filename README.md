@@ -1,4 +1,6 @@
-# Kirby Images <a href="https://www.paypal.me/medienbaecker"><img width="99" src="http://www.medienbaecker.com/beer.png" alt="Buy me a beer" align="right"></a>
+This plugin for Kirby 2 is no longer maintained. It is now part of the Kirby 3 core: https://getkirby.com/docs/reference/panel/fields/files
+
+# Kirby Images
 
 The `images` field can be used to edit groups of images very easily by drag-and-drop. Simply take an image from the sidebar and drop it on the field. You can also reorder images inside the field, not linked to the regular order.
 
